@@ -31,9 +31,13 @@ class SessionsController < ApplicationController
   def update
     @user = User.find(params[:id])
     user_params = params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :user_id)
-    @user.update(user_params)
-    flash[:success] = "Profile updated !"
-    redirect_to "/sessions/#{current_user[:id]}%>"
+    if @user.update(user_params)
+      flash[:success] = "Profile updated !"
+      redirect_to "/sessions/#{current_user[:id]}%>"
+    else
+      flash[:danger] = "Not your profile"
+      redirect_to "/sessions/#{current_user[:id]}%>"
+    end
   end
 
   def create
@@ -43,7 +47,7 @@ class SessionsController < ApplicationController
       log_in user #use method from helpers - temporary cookie
       redirect_to root_url
     else
-       flash[:danger] = 'Invalid email or password combination'
+      flash[:danger] = 'Invalid email or password combination'
       render 'new'
     end
   end
