@@ -22,9 +22,10 @@ end
       assert_redirected_to root_url
       follow_redirect!
       assert_template root_path
-      assert_select "a[href=?]", login_path, count: 0     #navbar
-      assert_select "a[href=?]", signup_path, count: 0    #navbar
+      assert_select "a[href=?]", login_path, count: 0     #navbar login
+      assert_select "a[href=?]", signup_path, count: 0    #navbar Sign up
       assert_select "a[href=?]", members_path, count: 2   #Members list
+      assert_select "a[href=?]", session_path, count: 1   #navbar Profil
       assert_select "a[href=?]", logout_path, count: 1    #navbar
     end
 

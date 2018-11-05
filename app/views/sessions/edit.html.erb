@@ -1,4 +1,4 @@
-<% if logged_in? %>
+<% if current_user? %>
 
 <h1>Change</h1>
 
@@ -10,11 +10,11 @@
   <strong><%= f.label :last_name %></strong><br>
     <%= f.text_field :last_name, placeholder: "Your last name" %><br>
 	<strong><%= f.label :email %></strong><br>
-		<%= f.email_field :email, placeholder: "Your email" %><br><br>
-  <strong><%= f.label :password %></strong><br />
-		<%= f.password_field :password, placeholder: "Your password" %>
-	<strong><%= f.label :password_confirmation %></strong><br />
-		<%= f.password_field :password_confirmation, placeholder: "Confirm your password", size: "60x10" %>
+		<%= f.email_field :email, placeholder: "Your email" %><br>
+  <strong><%= f.label :password %></strong><br>
+		<%= f.password_field :password, placeholder: "Your password" %><br>
+	<strong><%= f.label :password_confirmation %></strong><br><br>
+		<%= f.password_field :password_confirmation, placeholder: "Confirm your password", size: "60x10" %><br>
 	<%= f.submit "Submit" %>
 	<% end %>
 </div>

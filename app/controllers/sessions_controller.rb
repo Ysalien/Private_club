@@ -1,8 +1,20 @@
 class SessionsController < ApplicationController
-  before_action :current_user, only: [:edit, :update]
+  before_action :logged_in_user, only: [:edit, :update]
+  before_action :correct_user,   only: [:edit, :update]
 
-  def new
-  end
+  #Confirm logged in user and limit the access of edit form and user's profile
+  def logged_in_user
+     unless logged_in?
+       flash[:danger] = "Mmh.. that's not your profile"
+       redirect_to login_url
+     end
+   end
+
+   # Confirms the correct user.
+    def correct_user
+      @user = User.find(params[:id])
+      redirect_to(root_url) unless @user == current_user
+    end
 
   def index
     @user = User.all
@@ -19,8 +31,8 @@ class SessionsController < ApplicationController
   def update
     @user = User.find(params[:id])
     user_params = params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :user_id)
-    @user.update(gossip_params)
-    flash[:success] = "Informations saved"
+    @user.update(user_params)
+    flash[:success] = "Profile updated !"
     redirect_to "/sessions/#{current_user[:id]}%>"
   end
 
@@ -41,4 +53,8 @@ class SessionsController < ApplicationController
     flash[:success] = 'Logged out'
     redirect_to '/'
   end
+
+  def new
+  end
+
 end

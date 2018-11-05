@@ -8,7 +8,9 @@
       <% if logged_in? %>
       <a class="nav-item nav-link" href="/members">Members</a>
       <a class="nav-item nav-link" href="/sessions/<%=current_user[:id]%>">Profil</a>
+      <% if current_user.id == @user.id %>
       <a class="nav-item nav-link" href="/sessions/<%=current_user[:id]%>/edit">Edit profil</a>
+      <%end%>
       <a class="nav-item nav-link" href="/logout" data-method="delete">Log out</a>
       <% else %>
       <a class="nav-item nav-link active" href="/signup">Sign up <span class="sr-only">(current)</span></a>
