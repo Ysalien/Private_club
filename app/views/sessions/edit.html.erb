@@ -4,7 +4,7 @@
 
 <h2 class="text-center margin-header">Profile :</h2>
 <div class="container margin-header">
-	<%= form_for(@user, url: signup_path) do |f| %>
+	<%= form_for current_user do |f| %>
   <strong><%= f.label :first_name %></strong><br>
     <%= f.text_field :first_name, placeholder: "Your first name" %><br><br>
   <strong><%= f.label :last_name %></strong><br>

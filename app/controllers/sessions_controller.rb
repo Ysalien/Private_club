@@ -24,10 +24,6 @@ class SessionsController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  def edit
-    @user = User.find(params[:id])
-  end
-
   def update
     @user = User.find(params[:id])
     user_params = params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :user_id)
