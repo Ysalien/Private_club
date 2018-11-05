@@ -33,10 +33,10 @@ class SessionsController < ApplicationController
     user_params = params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :user_id)
     if @user.update(user_params)
       flash[:success] = "Profile updated !"
-      redirect_to @user
+      redirect_to '/members'
     else
       flash[:danger] = "Not your profile"
-      redirect_to @user
+      redirect_to '/members'
     end
   end
 
