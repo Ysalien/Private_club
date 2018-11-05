@@ -1,0 +1,20 @@
+body {
+  background-color: #F0EAD6;
+  font-variant: small-caps;
+}
+
+h1, p {
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+}
+
+a {
+  color: #dfd4b9!important;
+}
+
+.memberlist {
+  color: #FF6F61!important;
+  display: flex;
+  justify-content: center;
+}
