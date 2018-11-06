@@ -20,5 +20,15 @@ a {
 }
 
 .row {
-  padding: 20px;
+  padding: 30px;
+  color: #FF6F61!important;
+}
+
+.card-header {
+  color: #FF6F61!important;
+}
+
+.carbox {
+  display: flex;
+  justify-content: center;
 }
