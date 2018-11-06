@@ -24,11 +24,11 @@ a {
   color: #FF6F61!important;
 }
 
-.card-header {
+.memberlink, .card-header {
   color: #FF6F61!important;
 }
 
 .carbox {
   display: flex;
-  justify-content: center;
+  justify-content: center!important;
 }
