@@ -1,7 +1,7 @@
 <h1>The Private Club</h1>
 
 <% if logged_in? %>
-<h1>Welcome</h1>
+<h1>Welcome <%= current_user.first_name %></h1>
 <a href="/members" class="memberlist">List of members</a>
 <%else%>
 <p> Need to sign up or log in in order to access to our members list</p>
