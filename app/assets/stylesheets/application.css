@@ -29,5 +29,8 @@ a {
 }
 
 .labox {
-  padding: 50px;
+  display: flex;
+  justify-content: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
