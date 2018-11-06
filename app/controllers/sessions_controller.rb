@@ -31,8 +31,8 @@ class SessionsController < ApplicationController
       flash[:success] = "Profile updated !"
       redirect_to '/members'
     else
-      flash[:danger] = "Not your profile"
-      redirect_to '/members'
+      flash[:danger] = "Invalid"
+      redirect_to "/sessions/#{user.id}/edit"
     end
   end
 
