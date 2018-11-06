@@ -1,5 +1,6 @@
 <% if logged_in? %>
 
+<div class="labox">
 <div class="cardbox">
 <div class="card border-light mb-3" style="max-width: 18rem;">
   <div class="card-header">Member</div>
@@ -8,6 +9,7 @@
     <p class="card-text"><%= @user.first_name%></p>
     <p class="card-text"><%= @user.email%></p>
   </div>
+</div>
 </div>
 </div>
 

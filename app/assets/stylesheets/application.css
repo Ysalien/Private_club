@@ -28,7 +28,6 @@ a {
   color: #FF6F61!important;
 }
 
-.carbox {
-  display: flex;
-  justify-content: center!important;
+.labox {
+  padding: 50px;
 }
