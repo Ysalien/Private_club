@@ -32,7 +32,7 @@ class SessionsController < ApplicationController
       redirect_to '/members'
     else
       flash[:danger] = "Invalid"
-      redirect_to "/sessions/#{user.id}/edit"
+      render 'edit'
     end
   end
 
